@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>An introduction to Git &mdash; pres 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pres 0.1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">pres 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="an-introduction-to-git">
+<h1>An introduction to Git<a class="headerlink" href="#an-introduction-to-git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Sell Git to you</li>
+<li>Show you how to clone other people&#8217;s repositories.</li>
+<li>Show you how to make your own repository.</li>
+<li>Show you how to share this repository.</li>
+</ul>
+</div>
+<div class="section" id="what-is-git">
+<h2>What is Git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Git</strong></dt>
+<dd>A distributed version control system.</dd>
+<dt><strong>Version Control System</strong></dt>
+<dd>A system that records changes made to a file or set of files over time so that you can recall specific versions later on. (Chacon 2009)</dd>
+<dt><strong>Distributed</strong></dt>
+<dd>All versions of code in a version control system are contained on a clients machine.</dd>
+</dl>
+</div>
+<div class="section" id="centralized-vcs">
+<h2>Centralized VCS<a class="headerlink" href="#centralized-vcs" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/central.png" class="align-center" src="_images/central.png" />
+<p>(Chacon 2009)</p>
+</div>
+<div class="section" id="distributed-vcs">
+<h2>Distributed VCS<a class="headerlink" href="#distributed-vcs" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/distributed.png" class="align-center" src="_images/distributed.png" />
+<p>(Chacon 2009)</p>
+</div>
+<div class="section" id="painful-vcs">
+<h2>Painful VCS<a class="headerlink" href="#painful-vcs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>some-program.py</li>
+<li>some-program-2.py</li>
+<li>some-program-2-OOP.py</li>
+<li>some-program-3-OOP.py</li>
+<li>some-program-3-OOPfixed.py</li>
+<li>some-program-3a-OOPfixed.py</li>
+<li>some-program-3b-OOPfixed.py</li>
+<li>some-program-4-OOPmultiple-surfaces-BROKEN-more accurate finite differences.py</li>
+<li>some-program-4-OOPmultiple-surfaces-BROKEN-NOW-FIXED-more accurate finite differences-version 2.py</li>
+</ul>
+</div>
+<div class="section" id="what-is-github">
+<h2>What is GitHub?<a class="headerlink" href="#what-is-github" title="Permalink to this headline">¶</a></h2>
+<p>An online hosting service for Git repositories.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Git</dt>
+<dd><ul class="first last simple">
+<li>Command line interface.</li>
+<li>Can be used completely locally if desired.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>GitHub</dt>
+<dd><ul class="first last simple">
+<li>Graphical web interface.</li>
+<li>Shares your code with the rest of the world.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="git-hub-is-a-helpful-tool-when-you-want-to">
+<h2>Git(Hub) is a helpful tool when you want to...<a class="headerlink" href="#git-hub-is-a-helpful-tool-when-you-want-to" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>use somebody else&#8217;s code.</li>
+<li>write a software project and you want to keep track of its evolution.</li>
+<li>share some software that will make other people&#8217;s lives easier.</li>
+<li>introduce experimental changes to some software but be able to revert back if it doesn&#8217;t work at all.</li>
+<li>collaborate with others on a software project.</li>
+</ul>
+</div>
+<div class="section" id="use-somebody-else-s-code">
+<h2>Use somebody else&#8217;s code<a class="headerlink" href="#use-somebody-else-s-code" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Find a software project on GitHub.</p>
+</li>
+<li><p class="first">Copy the clone URL.</p>
+</li>
+<li><p class="first">Within terminal, go to local location for the project.</p>
+</li>
+<li><p class="first">Enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>git clone [copied url]
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="the-git-directory">
+<h2>The .git directory<a class="headerlink" href="#the-git-directory" title="Permalink to this headline">¶</a></h2>
+<p>Could have downloaded a zip but this doesn&#8217;t give us the:</p>
+<dl class="docutils">
+<dt><strong>.git directory</strong></dt>
+<dd><ul class="first last simple">
+<li>Contains all versions (compressed).</li>
+<li>View the author&#8217;s work over time.</li>
+<li>Revert to a previous version.</li>
+<li>Make changes to the software yourself.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="contains-all-versions">
+<h2>Contains all versions<a class="headerlink" href="#contains-all-versions" title="Permalink to this headline">¶</a></h2>
+<p>Git works by taking snapshots:</p>
+<img alt="_images/snapshots.png" class="align-center" src="_images/snapshots.png" />
+<p>(Chacon 2009)</p>
+<ul class="simple">
+<li>Each snapshot/commit is given a unique ID known as a checksum (SHA-1).</li>
+<li>Hexadecimal, 40 digits long</li>
+</ul>
+</div>
+<div class="section" id="view-the-author-s-work-over-time">
+<h2>View the author&#8217;s work over time<a class="headerlink" href="#view-the-author-s-work-over-time" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">To view a log of previous commits:</p>
+<div class="highlight-python"><div class="highlight"><pre>git log
+git log --oneline
+git log --pretty=fuller
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>View the author&#8217;s work over time<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Assume last commit by the authors prevented the software from interfacing with your own scripts. What exact changes were made:</p>
+<div class="highlight-python"><div class="highlight"><pre>git log -p
+</pre></div>
+</div>
+</div>
+<div class="section" id="time-travel">
+<h2>Time travel<a class="headerlink" href="#time-travel" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s go back in time:</p>
+<div class="highlight-python"><div class="highlight"><pre>git checkout HEAD~1 [filenames]
+</pre></div>
+</div>
+<p>Let&#8217;s go forwards in time:</p>
+<div class="highlight-python"><div class="highlight"><pre>git checkout HEAD [filenames]
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-changes-to-the-software-yourself">
+<h2>Make changes to the software yourself<a class="headerlink" href="#make-changes-to-the-software-yourself" title="Permalink to this headline">¶</a></h2>
+<p>We can build on top of any commit.</p>
+<ul class="simple">
+<li>Extend the functionality.</li>
+<li>Fix a bug.</li>
+</ul>
+</div>
+<div class="section" id="initial-setup">
+<h2>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
+<p>Before we make our repos we need to tell git who we are:</p>
+<div class="highlight-python"><div class="highlight"><pre>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;you@somewhere.com&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="track-our-own-software">
+<h2>Track our own software<a class="headerlink" href="#track-our-own-software" title="Permalink to this headline">¶</a></h2>
+<p>Two ways to do this:</p>
+<ul>
+<li><p class="first">Make a repository from scratch:</p>
+<div class="highlight-python"><div class="highlight"><pre>git init [repo name]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Initialise a repository in an existing project:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd project directory
+git init
+</pre></div>
+</div>
+</li>
+<li><p class="first">After doing this we get a directory and a .git subdirectory.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="ignore-files">
+<h2>Ignore files<a class="headerlink" href="#ignore-files" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Need to let git know which files we want to track.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Not all files need to be tracked:</dt>
+<dd><ul class="first last simple">
+<li>Compiled files</li>
+<li>Data files</li>
+<li>Temporary files</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Definitely want:</dt>
+<dd><ul class="first last simple">
+<li>Source files</li>
+<li>Documentation</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">To make sure we don&#8217;t accidentally track inapproriate files we create .gitignore.</p>
+</li>
+<li><p class="first">Sits in the working directory.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Every line specifies (with glob patterns) sets of files to keep out.</dt>
+<dd><ul class="first last simple">
+<li>file types</li>
+<li>directories</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="add-files">
+<h2>Add files<a class="headerlink" href="#add-files" title="Permalink to this headline">¶</a></h2>
+<p>To add files to be tracked:</p>
+<div class="highlight-python"><div class="highlight"><pre>git add [files]
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit">
+<h2>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h2>
+<p>Once all our files have been added. We are ready to commit:</p>
+<div class="highlight-python"><div class="highlight"><pre>git commit -a -m &quot;Message&quot;
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">-a</span></tt> : add all our tracked files to this commit
+<tt class="docutils literal"><span class="pre">-m</span></tt> : use this message for the log</p>
+</div>
+<div class="section" id="status">
+<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
+<p>At any point we can inquire on the state of the repo with:</p>
+<div class="highlight-python"><div class="highlight"><pre>git status
+</pre></div>
+</div>
+</div>
+<div class="section" id="renaming-and-removing">
+<h2>Renaming and removing<a class="headerlink" href="#renaming-and-removing" title="Permalink to this headline">¶</a></h2>
+<p>To stop tracking a file:</p>
+<div class="highlight-python"><div class="highlight"><pre>git rm [filename]
+</pre></div>
+</div>
+<p>To rename a file:</p>
+<div class="highlight-python"><div class="highlight"><pre>git mv [current filename] [new filename]
+</pre></div>
+</div>
+</div>
+<div class="section" id="branches">
+<h2>Branches<a class="headerlink" href="#branches" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">If we want to try something out while not impacting the current code base we can create a branch:</p>
+<div class="highlight-python"><div class="highlight"><pre>git branch [branch name]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Useful if you have an idea to try out but don&#8217;t want to affect the master.</p>
+</li>
+<li><p class="first">To view all branches:</p>
+<div class="highlight-python"><div class="highlight"><pre>git branch
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="merging">
+<h2>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h2>
+<p>If you are happy with your experiment we can merge it back to the master. To do this:</p>
+<div class="highlight-python"><div class="highlight"><pre>git merge [experiment branch]
+</pre></div>
+</div>
+</div>
+<div class="section" id="sharing-your-work">
+<h2>Sharing your work<a class="headerlink" href="#sharing-your-work" title="Permalink to this headline">¶</a></h2>
+<p>The repo so far is local. We can share it by adding a remote.</p>
+<ol class="arabic">
+<li><p class="first">Log in to GitHub.</p>
+</li>
+<li><p class="first">Create a repo.</p>
+</li>
+<li><p class="first">Back on the local machine:</p>
+<div class="highlight-python"><div class="highlight"><pre>git remote add origin [repo url]
+git push origin master
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="read-more">
+<h2>Read more<a class="headerlink" href="#read-more" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Pro Git by Scott Chacon - a good (and free) book referenced throughout this talk as (Chacon, 2009):</dt>
+<dd><a class="reference external" href="http://git-scm.com/book">http://git-scm.com/book</a></dd>
+<dt>Ignore files</dt>
+<dd><a class="reference external" href="http://git-scm.com/docs/gitignore">http://git-scm.com/docs/gitignore</a></dd>
+<dt>Git introduction in a IPython notebook</dt>
+<dd><a class="reference external" href="https://github.com/jakevdp/2013_fall_ASTR599">https://github.com/jakevdp/2013_fall_ASTR599</a></dd>
+<dt>Software carpentry - software for scientists introduction to git</dt>
+<dd><a class="reference external" href="http://software-carpentry.org/v5/novice/git/index.html">http://software-carpentry.org/v5/novice/git/index.html</a></dd>
+<dt>Git Immersion - a web-based guided tour</dt>
+<dd><a class="reference external" href="http://gitimmersion.com/">http://gitimmersion.com/</a></dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">An introduction to Git</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#what-is-git">What is Git?</a></li>
+<li><a class="reference internal" href="#centralized-vcs">Centralized VCS</a></li>
+<li><a class="reference internal" href="#distributed-vcs">Distributed VCS</a></li>
+<li><a class="reference internal" href="#painful-vcs">Painful VCS</a></li>
+<li><a class="reference internal" href="#what-is-github">What is GitHub?</a></li>
+<li><a class="reference internal" href="#git-hub-is-a-helpful-tool-when-you-want-to">Git(Hub) is a helpful tool when you want to...</a></li>
+<li><a class="reference internal" href="#use-somebody-else-s-code">Use somebody else&#8217;s code</a></li>
+<li><a class="reference internal" href="#the-git-directory">The .git directory</a></li>
+<li><a class="reference internal" href="#contains-all-versions">Contains all versions</a></li>
+<li><a class="reference internal" href="#view-the-author-s-work-over-time">View the author&#8217;s work over time</a></li>
+<li><a class="reference internal" href="#id1">View the author&#8217;s work over time</a></li>
+<li><a class="reference internal" href="#time-travel">Time travel</a></li>
+<li><a class="reference internal" href="#make-changes-to-the-software-yourself">Make changes to the software yourself</a></li>
+<li><a class="reference internal" href="#initial-setup">Initial setup</a></li>
+<li><a class="reference internal" href="#track-our-own-software">Track our own software</a></li>
+<li><a class="reference internal" href="#ignore-files">Ignore files</a></li>
+<li><a class="reference internal" href="#add-files">Add files</a></li>
+<li><a class="reference internal" href="#commit">Commit</a></li>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#renaming-and-removing">Renaming and removing</a></li>
+<li><a class="reference internal" href="#branches">Branches</a></li>
+<li><a class="reference internal" href="#merging">Merging</a></li>
+<li><a class="reference internal" href="#sharing-your-work">Sharing your work</a></li>
+<li><a class="reference internal" href="#read-more">Read more</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">pres 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Daniel Rice.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
